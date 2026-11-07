@@ -1,39 +1,205 @@
+
 <!DOCTYPE html>
-
 <html lang="ru">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <meta name="theme-color" content="#111827">
-
 <meta name="apple-mobile-web-app-capable" content="yes">
-
 <meta name="apple-mobile-web-app-title" content="Second Space">
+
+<link rel="manifest" href="./manifest.json">
 
 <title>Second Space</title>
 
 <style>
-
 * {
-
   box-sizing: border-box;
-
 }
 
 body {
-
   margin: 0;
-
   min-height: 100vh;
-
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-
   color: white;
-
   background: linear-gradient(160deg, #172033, #080d18 75%);
-
   padding: 25px 20px;
+}
+
+.status {
+  display: flex;
+  justify-content: space-between;
+  color: #b8c2d5;
+  font-size: 14px;
+  margin-bottom: 45px;
+}
+
+h1 {
+  font-size: 31px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #9ba9bf;
+  margin-bottom: 35px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px 12px;
+}
+
+.app {
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+}
+
+.icon {
+  width: 62px;
+  height: 62px;
+  margin: auto auto 9px;
+  border-radius: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 29px;
+  background: #26354e;
+  border: 1px solid #40516c;
+  box-shadow: 0 5px 15px #0005;
+}
+
+.panel {
+  margin-top: 45px;
+  padding: 20px;
+  border-radius: 25px;
+  background: #ffffff12;
+  border: 1px solid #ffffff20;
+}
+
+.panel h2 {
+  font-size: 17px;
+  margin-top: 0;
+}
+
+.panel p {
+  color: #aab6c9;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.dock {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 45px;
+  padding: 15px 5px;
+  border-radius: 25px;
+  background: #ffffff18;
+}
+
+.dock .icon {
+  width: 52px;
+  height: 52px;
+  margin: 0;
+  border-radius: 17px;
+}
+
+footer {
+  text-align: center;
+  color: #78869c;
+  font-size: 11px;
+  margin-top: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="status">
+  <span>Second Space</span>
+  <span>● ● ●</span>
+</div>
+
+<h1>Мой экран</h1>
+<div class="subtitle">Добро пожаловать</div>
+
+<div class="grid">
+
+<a class="app" href="https://www.google.com">
+  <div class="icon">🔎</div>Google
+</a>
+
+<a class="app" href="https://maps.google.com">
+  <div class="icon">🗺️</div>Карты
+</a>
+
+<a class="app" href="https://www.youtube.com">
+  <div class="icon">▶️</div>YouTube
+</a>
+
+<a class="app" href="https://calendar.google.com">
+  <div class="icon">📅</div>Календарь
+</a>
+
+<a class="app" href="https://weather.com">
+  <div class="icon">🌤️</div>Погода
+</a>
+
+<a class="app" href="https://keep.google.com">
+  <div class="icon">📝</div>Заметки
+</a>
+
+<a class="app" href="https://music.youtube.com">
+  <div class="icon">🎵</div>Музыка
+</a>
+
+<a class="app" href="https://www.wikipedia.org">
+  <div class="icon">📚</div>Книги
+</a>
+
+</div>
+
+<div class="panel">
+  <h2>Second Space</h2>
+  <p>
+    Альтернативный главный экран.
+    Здесь находятся только выбранные
+    тобой ярлыки и ссылки.
+  </p>
+</div>
+
+<div class="dock">
+
+<a class="app" href="https://www.google.com">
+  <div class="icon">🌐</div>
+</a>
+
+<a class="app" href="https://maps.google.com">
+  <div class="icon">📍</div>
+</a>
+
+<a class="app" href="https://www.youtube.com">
+  <div class="icon">▶️</div>
+</a>
+
+<a class="app" href="https://music.youtube.com">
+  <div class="icon">🎧</div>
+</a>
+
+</div>
+
+<footer>SECOND SPACE • PERSONAL HOME SCREEN</footer>
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js")
+      .catch(error => console.log("Ошибка:", error));
+  });
+}
+</script>
+
+</body>
+</html>
