@@ -1,0 +1,11 @@
+
+{
+  "name": "Second Space",
+  "short_name": "Second Space",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#080d18",
+  "theme_color": "#111827",
+  "description": "Alternative home screen"
+}
